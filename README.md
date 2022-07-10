@@ -1,1 +1,1 @@
-# planterary-api
+# planetary-api
