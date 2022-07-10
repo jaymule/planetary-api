@@ -236,7 +236,7 @@ def get_planet_by_id(planet_id: int):
 
 
 @app.route('/planets', methods=['POST'])
-@jwt_required
+@jwt_required()
 def add_planet():
     name = request.json['planet_name']
     check = Planet.query.filter_by(planet_name=name).first()
@@ -259,6 +259,7 @@ def add_planet():
 
 
 @app.route('/update_planet', methods=['PUT'])
+@jwt_required()
 def update_planet():
     planet_id = request.json['planet_id']
     planet = Planet.query.filter_by(planet_id=planet_id).first()
@@ -278,6 +279,7 @@ def update_planet():
 
 
 @app.route('/remove_planet/<int:planet_id>', methods=['DELETE'])
+@jwt_required()
 def remove_planet(planet_id: int):
     planet = Planet.query.filter_by(planet_id=planet_id).first()
     if planet:
