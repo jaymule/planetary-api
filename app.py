@@ -14,7 +14,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 # Configuring config variable SQLALCHEMY_DATABASE_URI (File based database)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'planets.db')
 
-app.config['SECRET_KET'] = 'super-secret'
+app.config['JWT_SECRET_KEY'] = 'super-secret'
 #app.config['JWT_ALGORITHM'] = 'HS256'
 app.config['MAIL_SERVER'] = 'smtp.mailtrap.io'
 app.config['MAIL_PORT'] = 2525
